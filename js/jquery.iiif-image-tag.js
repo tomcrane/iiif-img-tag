@@ -8,7 +8,6 @@
             $img.css("cursor", "pointer");
             var viewer;
             var $osd = $("<div/>").insertAfter($img);
-            console.log($osd);
             $osd.css({"height":($img.height()+"px"), "width":($img.width()+"px")});
             $osd.hide();
             $img.click(function(){
