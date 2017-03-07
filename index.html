@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IIIF-enhanced image tags</title>
+    <style>
+        body {font-family: sans-serif}
+    </style>
+</head>
+<body>
+    <h1>IIIF-enhanced Image Tags</h1>
+
+    <h2>Scenario 1 (client) - regular image tag with progressive deep zoom enhancement</h2>
+
+    <p>In these examples, the image tag's src attribute is a IIIF Image API URL. It might be a crop, or the full region, at any size.</p>
+    
+    <pre>         
+&lt;img src="https://dlcs.io/.../full/600,/0/default.jpg" width="600" class="iiif-image" /&gt;
+
+&lt;img src="https://dlcs.io/.../full/400,/0/default.jpg" width="400" class="iiif-image" /&gt;
+
+&lt;script&gt;
+    $(".iiif-image").iiifImage();
+&lt;/script&gt;
+    </pre>
+    
+    <p>The image source might have been selected from a IIIF resource in the editorial interface, using a 
+        <a target="_blank" href="http://digital.ucd.ie/crop/?id=ucdlib:33736&pid=ucdlib:33549">cropping tool</a>.</p>
+    <p>Click the images to deep zoom.</p>
+
+    <img src="https://dlcs.io/iiif-img/wellcome/1/ffb99539-d29c-4f14-a784-a807a778c8a7/full/600,/0/default.jpg" 
+         width="600" class="iiif-image" />
+
+    <img src="https://dlcs.io/iiif-img/wellcome/1/6e6f018f-4d8b-4856-a570-d252e09af13b/full/400,/0/default.jpg"    
+         width="400" class="iiif-image" />
+
+    <h2>Scenario 2 (probably server) - responsive images from same IIIF source</h2>
+
+    <p>In this example, the editor might have chosen a more detailed view for small devices, and two size variants of the full image. 
+        <br/>
+        A combination of art-directed <a target="_blank" href="http://digital.ucd.ie/crop/?id=ucdlib:33736&pid=ucdlib:33549">cropping</a>
+        by a human and size selection by template logic allows for fully responsive images from
+        a single IIIF source.</p>
+
+    <p>Change the screen width to see the different images.</p>
+
+    <pre>
+&lt;picture&gt;
+    &lt;source media="(min-width: 1600px)" srcset="https://dlcs.io/.../120,850,2100,2000/1600,/0/default.jpg"&gt;
+    &lt;source media="(min-width: 750px)"  srcset="https://dlcs.io/.../250,850,1950,2000/1000,/0/default.jpg"&gt;
+    &lt;img alt="example image"               src="https://dlcs.io/.../250,850,900,1000/500,/0/default.jpg"&gt;
+&lt;/picture&gt;
+    </pre>
+    <picture>
+        <source media="(min-width: 1600px)" srcset="https://dlcs.io/iiif-img/wellcome/1/f18fde38-223c-4b7c-8cca-1e0f52a4ca1b/120,850,2100,2000/1600,/0/default.jpg">
+        <source media="(min-width: 750px)" srcset="https://dlcs.io/iiif-img/wellcome/1/f18fde38-223c-4b7c-8cca-1e0f52a4ca1b/250,850,1950,2000/1000,/0/default.jpg">
+        <img src="https://dlcs.io/iiif-img/wellcome/1/f18fde38-223c-4b7c-8cca-1e0f52a4ca1b/250,850,900,1000/500,/0/default.jpg" alt="cat">
+    </picture>
+
+       
+    
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="openseadragon/openseadragon.min.js"></script>
+    <script src="js/jquery.iiif-image-tag.js"></script>
+    <script>
+        $(".iiif-image").iiifImage();
+    </script>
+</body>
+</html>
