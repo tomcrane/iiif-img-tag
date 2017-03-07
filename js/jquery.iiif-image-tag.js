@@ -1,4 +1,4 @@
-// for demo purposes. Assumes OpenSeadrgaon already in scope rather than loading it.
+// for demo purposes. Assumes OpenSeadagon already in scope rather than loading it.
 // Doesn't check for errors. And so on.
 (function($) {
     $.fn.iiifImage = function() {
