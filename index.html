@@ -45,20 +45,21 @@
         a single IIIF source.</p>
 
     <p>Change the screen width to see the different images.</p>
-
-    <pre>
+<pre>          
 &lt;picture&gt;
     &lt;source media="(min-width: 1600px)" srcset="https://dlcs.io/.../120,850,2100,2000/1600,/0/default.jpg"&gt;
-    &lt;source media="(min-width: 750px)"  srcset="https://dlcs.io/.../250,850,1950,2000/1000,/0/default.jpg"&gt;
-    &lt;img alt="example image"               src="https://dlcs.io/.../250,850,900,1000/500,/0/default.jpg"&gt;
+    &lt;source media="(min-width: 700px)"  srcset="https://dlcs.io/.../250,850,1950,2000/1000,/0/default.jpg"&gt;
+    &lt;source media="(min-width: 400px)"  srcset="https://dlcs.io/.../250,850,900,1000/500,/0/default.jpg"&gt;
+    &lt;img alt="example image"               src="https://dlcs.io/.../250,850,900,1000/320,/0/default.jpg"&gt;
 &lt;/picture&gt;
-    </pre>
+</pre>
+
     <picture>
         <source media="(min-width: 1600px)" srcset="https://dlcs.io/iiif-img/wellcome/1/f18fde38-223c-4b7c-8cca-1e0f52a4ca1b/120,850,2100,2000/1600,/0/default.jpg">
-        <source media="(min-width: 750px)" srcset="https://dlcs.io/iiif-img/wellcome/1/f18fde38-223c-4b7c-8cca-1e0f52a4ca1b/250,850,1950,2000/1000,/0/default.jpg">
-        <img src="https://dlcs.io/iiif-img/wellcome/1/f18fde38-223c-4b7c-8cca-1e0f52a4ca1b/250,850,900,1000/400,/0/default.jpg" alt="cat">
+        <source media="(min-width: 700px)" srcset="https://dlcs.io/iiif-img/wellcome/1/f18fde38-223c-4b7c-8cca-1e0f52a4ca1b/250,850,1950,2000/1000,/0/default.jpg">
+        <source media="(min-width: 500px)" srcset="https://dlcs.io/iiif-img/wellcome/1/f18fde38-223c-4b7c-8cca-1e0f52a4ca1b/250,850,900,1000/500,/0/default.jpg">
+        <img src="https://dlcs.io/iiif-img/wellcome/1/f18fde38-223c-4b7c-8cca-1e0f52a4ca1b/250,850,900,1000/320,/0/default.jpg" alt="cat">
     </picture>
-
        
     
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
