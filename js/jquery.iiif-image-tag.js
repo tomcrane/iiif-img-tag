@@ -1,7 +1,10 @@
-// for demo purposes. Assumes OpenSeadagon already in scope rather than loading it.
+// for demo purposes. Assumes Openseadragon already in scope rather than loading it.
 // Doesn't check for errors. And so on.
 (function($) {
-    $.fn.iiifImage = function() {
+    $.fn.iiifImage = function(osdControlImagePath) {
+        if(!osdControlImagePath) {
+            osdControlImagePath = "openseadragon/images/";
+        }
         return this.filter("img").each( function() {
             var info = this.src.split("/").slice(0, -4).join("/") + "/info.json";
             var $img = $(this);
@@ -15,7 +18,7 @@
                 if(!viewer){
                     viewer = OpenSeadragon({
                         element: $osd[0],
-                        prefixUrl: "openseadragon/images/",
+                        prefixUrl: osdControlImagePath,
                         tileSources: info
                     });
                     viewer.addHandler("full-screen", function(ev){
